@@ -30,10 +30,10 @@ export class FormComponent implements OnInit {
   enviar() {
     if (this.id) {
       console.log('Modo Edição')
-      this.appService.editar(this.id, this.appService.form);
+      this.appService.editar(this.id);
     } else {
       console.log('Modo Criação')
-      this.appService.salvar(this.appService.form);
+      this.appService.salvar();
     }
     this.router.navigate(['/']);
   }

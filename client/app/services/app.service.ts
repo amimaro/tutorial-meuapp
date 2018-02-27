@@ -14,8 +14,8 @@ export class AppService {
     this.form.body = "";
   }
 
-  salvar(form) {
-    this.http.post('http://localhost:8080/api/artigo', form)
+  salvar() {
+    this.http.post('http://localhost:8080/api/artigo', this.form)
     .subscribe(
       res => {
         alert('Artigo Salvo com Sucesso!');
@@ -39,7 +39,7 @@ export class AppService {
     );
   }
 
-  getArtigosById(id) {
+  getArtigoById(id) {
     this.http.get('http://localhost:8080/api/artigo/' + id)
     .subscribe(
       res => {
@@ -55,8 +55,8 @@ export class AppService {
     );
   }
 
-  editar(id, form) {
-    this.http.put('http://localhost:8080/api/artigo/' + id, form)
+  editar(id) {
+    this.http.put('http://localhost:8080/api/artigo/' + id, this.form)
     .subscribe(
       res => {
         alert('Alterado com Sucesso!');
