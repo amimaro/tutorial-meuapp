@@ -1,0 +1,21 @@
+<div class="field is-grouped pull-right">
+  <div class="control">
+    <button class="button is-link" (click)="editar()">
+    <span class="icon"><i class="fa fa-edit"></i></span>
+    <span>Editar</span>
+    </button>
+  </div>
+  <div class="control" (click)="excluir()">
+    <button class="button is-danger">
+    <span class="icon"><i class="fa fa-trash"></i></span>
+    <span>Excluir</span>
+    </button>
+  </div>
+</div>
+<h1 class="title">
+    {{ appService.titulo }}
+</h1>
+<hr>
+<p>
+  {{ appService.conteudo }}
+</p>
