@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
       this.id = params['id'];
       if (this.id) {
         console.log('Modo Edição')
-        this.appService.getArtigosById(this.id);
+        this.appService.getArtigoById(this.id);
       } else {
         console.log('Modo Criação')
       }
