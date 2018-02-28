@@ -8,6 +8,7 @@ export class AppService {
   titulo: string = "";
   conteudo: string = "";
   form: any = {};
+  apiUrl: string = 'https://tutorial-meuapp.herokuapp.com/';
 
   constructor(private http: HttpClient) {
     this.form.title = "";
@@ -15,7 +16,7 @@ export class AppService {
   }
 
   salvar() {
-    this.http.post('http://localhost:8080/api/artigo', this.form)
+    this.http.post(this.apiUrl, this.form)
     .subscribe(
       res => {
         alert('Artigo Salvo com Sucesso!');
@@ -27,7 +28,7 @@ export class AppService {
   }
 
   getArtigos() {
-    this.http.get('http://localhost:8080/api/artigo')
+    this.http.get(this.apiUrl)
     .subscribe(
       res => {
         console.log(res);
@@ -40,7 +41,7 @@ export class AppService {
   }
 
   getArtigoById(id) {
-    this.http.get('http://localhost:8080/api/artigo/' + id)
+    this.http.get(this.apiUrl + id)
     .subscribe(
       res => {
         console.log(res);
@@ -56,7 +57,7 @@ export class AppService {
   }
 
   editar(id) {
-    this.http.put('http://localhost:8080/api/artigo/' + id, this.form)
+    this.http.put(this.apiUrl + id, this.form)
     .subscribe(
       res => {
         alert('Alterado com Sucesso!');
@@ -68,7 +69,7 @@ export class AppService {
   }
 
   deleteArtigo(id) {
-    this.http.delete('http://localhost:8080/api/artigo/' + id)
+    this.http.delete(this.apiUrl + id)
     .subscribe(
       res => {
         console.log(res);
