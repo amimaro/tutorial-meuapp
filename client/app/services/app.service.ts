@@ -8,7 +8,7 @@ export class AppService {
   titulo: string = "";
   conteudo: string = "";
   form: any = {};
-  apiUrl: string = 'https://tutorial-meuapp.herokuapp.com/';
+  apiUrl: string = 'https://tutorial-meuapp.herokuapp.com/api/artigo/';
 
   constructor(private http: HttpClient) {
     this.form.title = "";
